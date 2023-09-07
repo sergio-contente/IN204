@@ -14,6 +14,7 @@ struct Point
 			std::cout << "You didn't provided the Y value, it's set to 0 by default." << std::endl;
 		}
 		Point(int X, int Y): m_x(X), m_y(Y) {}
+		Point(const Point& anotherPoint): m_x(anotherPoint.m_x), m_y(anotherPoint.m_y) {}
 		~Point() {
 			std::cout << "Destroying the Point: " << this << std::endl << "P(" << m_x << ", " << m_y << ")" << std::endl;
 		}
