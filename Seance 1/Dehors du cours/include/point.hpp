@@ -6,16 +6,16 @@
 struct Point
 {
 	private:
-		int x, y;
+		int m_x, m_y;
 
 	public:
-		explicit Point() : x(0), y(0) {}
-		Point(int X): x(X), y(0) {
+		explicit Point() : m_x(0), m_y(0) {}
+		Point(int X): m_x(X), m_y(0) {
 			std::cout << "You didn't provided the Y value, it's set to 0 by default." << std::endl;
 		}
-		Point(int X, int Y): x(X), y(Y) {}
+		Point(int X, int Y): m_x(X), m_y(Y) {}
 		~Point() {
-			std::cout << "Destroying the Point: " << this << std::endl << "P(" << x << ", " << y << ")" << std::endl;
+			std::cout << "Destroying the Point: " << this << std::endl << "P(" << m_x << ", " << m_y << ")" << std::endl;
 		}
 
 		void setX(int x);

@@ -1,17 +1,17 @@
 #include "../include/point.hpp"
 
 void Point::setX(int X) {
-	this->x = X;
+	this->m_x = X;
 }
 
 void Point::setY(int Y) {
-	this->y = y;
+	this->m_y = Y;
 }
 
 int Point::getX() {
-	return this->x;
+	return this->m_x;
 }
 
 int Point::getY(){
-	return this->y;
+	return this->m_y;
 }
