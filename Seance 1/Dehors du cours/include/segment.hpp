@@ -12,7 +12,7 @@ struct Segment
 	public:
 		Segment(const Point& point1, const Point& point2) : m_p1(point1), m_p2(point2) {
 			std::cout << "Segment between points (" << m_p1.getX() << ", " << m_p1.getY() << ")\n" <<
-			", ("  
+			", ("  << std::endl;
 		}
 };
 
