@@ -10,14 +10,14 @@ struct MyCounter
  
     public:
         explicit MyCounter():
-            counter((uint)0), max((uint)0)
+            counter((unsigned)0), max((unsigned)0)
         {}
         
-        MyCounter(uint MaxValue):
-            counter((uint)0), max(MaxValue)
+        MyCounter(unsigned MaxValue):
+            counter((unsigned)0), max(MaxValue)
         {}
 
-        MyCounter(uint Counter, uint MaxValue):
+        MyCounter(unsigned Counter, unsigned MaxValue):
             counter(Counter), max(MaxValue)
         {}
 
