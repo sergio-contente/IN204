@@ -2,17 +2,21 @@
 
 void testMyBiDiCounter()
 {
-    MyBiDiCounter counterA(4);
+    MyBiDiCounter counterA(5);
     counterA.reset();
     counterA.print();
     for(int i=0; i < 6; i++)
     {
-        counterA.increment();
+        counterA.increment(5);
         counterA.print();
     }
+
+    counterA.reset();
+    counterA.print();
+    
     for(int i=0; i < 6; i++)
     {
-        counterA.decrement();
+        counterA.MyCounter::increment();
         counterA.print();
     }
 }

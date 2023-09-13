@@ -13,7 +13,9 @@ class MyBiDiCounter : public MyCounter {
 			MyCounter(theMaxValue) {}
 		explicit MyBiDiCounter(unsigned theCounterValue, unsigned theMaxValue) :
 			MyCounter(theCounterValue, theMaxValue) {}
+
 		void decrement();
+		void increment(unsigned value);
 		void print();
 };
 
