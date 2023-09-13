@@ -2,8 +2,7 @@
 
 void testMyBiDiCounter()
 {
-    MyBiDiCounter counterA;
-    counterA.setMax(4);
+    MyBiDiCounter counterA(4);
     counterA.reset();
     counterA.print();
     for(int i=0; i < 6; i++)
@@ -19,18 +18,6 @@ void testMyBiDiCounter()
 }
 
 int main() {
-
-		// MyBiDiCounter* bidicounter = new MyBiDiCounter();
-
-		// bidicounter->increment();
-
-		// bidicounter->print();
-
-		// bidicounter->decrement();
-
-		// bidicounter->print();
-
-		// free(bidicounter);
 
 		testMyBiDiCounter();
 

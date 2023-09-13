@@ -6,8 +6,13 @@
 class MyBiDiCounter : public MyCounter {
 
 	public:
-
-		MyBiDiCounter() {}
+		MyBiDiCounter() : MyCounter() {}
+		MyBiDiCounter(const MyBiDiCounter& anotherBiDiCounter) :
+			MyCounter(anotherBiDiCounter)	{}
+		explicit MyBiDiCounter(unsigned theMaxValue) :
+			MyCounter(theMaxValue) {}
+		explicit MyBiDiCounter(unsigned theCounterValue, unsigned theMaxValue) :
+			MyCounter(theCounterValue, theMaxValue) {}
 		void decrement();
 		void print();
 };
