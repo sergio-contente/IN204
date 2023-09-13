@@ -3,8 +3,10 @@
 
 #include <iostream>
 
-struct MyCounter
+class MyCounter
 {
+    protected:
+
         unsigned counter;
         unsigned max;
  

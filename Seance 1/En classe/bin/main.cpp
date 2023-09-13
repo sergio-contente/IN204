@@ -7,8 +7,8 @@ void useObjectA() {
     Counter2.reset();
     for(unsigned i = 0; i <= 5; i++) {
       std::cout 
-	<< "Valeur des compteurs (" 	<< Counter1.counter 
-	<< ", " << Counter2.counter 	<< ")" << std::endl;
+	<< "Valeur des compteurs (" 	<< Counter1.getCounter()
+	<< ", " << Counter2.getCounter() 	<< ")" << std::endl;
         Counter1.increment();
         Counter2.increment();
     }
