@@ -13,8 +13,14 @@ class ForwardCounter : public virtual BaseCounter {
 			BaseCounter(theMaxValue) {}
 		explicit ForwardCounter(unsigned theCounterValue, unsigned theMaxValue) :
 			BaseCounter(theCounterValue, theMaxValue) {}
+
 		void increment();
 		void print();
+
+		 ~ForwardCounter()
+        {
+            std::cout << "Destruction: ForwardCounter@" << this << std::endl;
+        }
 };
 
 #endif // !__FORWARDCOUNTER_H__

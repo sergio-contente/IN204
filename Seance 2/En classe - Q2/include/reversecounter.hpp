@@ -15,6 +15,11 @@ class ReverseCounter : public virtual BaseCounter {
 			BaseCounter(theCounterValue, theMaxValue) {}
 		void decrement();
 		void print();
+
+		~ReverseCounter()
+        {
+            std::cout << "Destruction: ReverseCounter@" << this << std::endl;
+        }
 };
 
 #endif // !__REVERSECOUNTER_H__

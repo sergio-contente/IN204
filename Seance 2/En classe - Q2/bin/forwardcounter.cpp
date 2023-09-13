@@ -12,3 +12,4 @@ void ForwardCounter::increment() {
 void ForwardCounter::print() {
 	std::cout << "Compteur : " << counter << "/" << max << std::endl;
 }
+
