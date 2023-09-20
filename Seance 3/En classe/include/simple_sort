@@ -26,18 +26,18 @@ namespace generic
 				theNumberOfValues --)
 		{
 				theVector.push_back(
-						(genType)distribution(gen));
+					(genType)distribution(gen));
 		}
 	}
-	
-	void populate_with_randoms<double>(
+	//template<>
+	void populate_with_randoms(
 		std::vector<double>& theVector,
-		double theNumberOfValues, double theMinValue, double theMaxValue)
+		int theNumberOfValues, double theMinValue, double theMaxValue)
 		{
 			std::random_device rd;
 			std::minstd_rand gen(rd());
-			std::uniform_int_distribution<double> 
-					distribution(theMinValue, theMaxValue);
+			std::uniform_int_distribution<int> 
+					distribution((int) theMinValue, (int) theMaxValue);
 					// !!!! l'instantiation uniform_int_distribution<double> 
 					// n'est pas supportée
 			theVector.clear();
@@ -48,7 +48,7 @@ namespace generic
 					// a priori une valeur flottante mais un entier !
 			{
 					theVector.push_back(
-						(double)distribution(gen));
+						distribution(gen));
 			}
 		}
 
