@@ -1,0 +1,80 @@
+#ifndef SIMPLE_SORT
+#define SIMPLE_SORT
+ 
+#include<iostream>
+#include<random>
+#include<vector>
+#include<algorithm>
+#include<cstdio>
+ 
+#include"simple_sort.hpp"
+
+namespace generic
+{
+	template<typename T, typename genType = int>
+	void populate_with_randoms(
+		std::vector<T>& theVector,
+		int theNumberOfValues, genType theMinValue, genType theMaxValue
+	)
+	{
+		std::random_device rd;
+		std::minstd_rand gen(rd());
+		std::uniform_int_distribution<genType> distribution(theMinValue, theMaxValue);
+		theVector.clear();
+		for(;
+				theNumberOfValues > 0;
+				theNumberOfValues --)
+		{
+				theVector.push_back(
+						(genType)distribution(gen));
+		}
+	}
+	
+	void populate_with_randoms<double>(
+		std::vector<double>& theVector,
+		double theNumberOfValues, double theMinValue, double theMaxValue)
+		{
+			std::random_device rd;
+			std::minstd_rand gen(rd());
+			std::uniform_int_distribution<double> 
+					distribution(theMinValue, theMaxValue);
+					// !!!! l'instantiation uniform_int_distribution<double> 
+					// n'est pas supportée
+			theVector.clear();
+			for(;
+					theNumberOfValues > 0;
+					theNumberOfValues --)
+					// Fonctionne mais theNumberOfValues n'est pas 
+					// a priori une valeur flottante mais un entier !
+			{
+					theVector.push_back(
+						(double)distribution(gen));
+			}
+		}
+
+	template<typename T>
+	void print_vector(const std::vector<T>& anArray)
+	{
+		int length = anArray.size();
+		std::cout << "[";
+		for(int index = 0; index < length - 1; index ++)
+				std::cout << anArray[index] << ", ";
+		std::cout << anArray[length - 1] << "]" << std::endl;
+	}
+
+	template<typename T>
+	void simple_sort(std::vector<T>& theValues)
+	{
+		int length = theValues.size();
+		for(int i = 0; i < length-1; i ++)
+		{
+				for(int j= i+1; j < length; j++)
+				{
+						if(theValues[i] > theValues[j])
+							std::swap(theValues[i], theValues[j]);
+				}
+		}
+	}
+} // namespace generic
+
+#endif //!SIMPLE_SORT
