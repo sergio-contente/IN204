@@ -8,6 +8,6 @@ Codes for the TDs and project of IN204 discipline at ENSTA Paris
 ```
 - To build in Linux:
 ```bash
-cmake -DCMAKE_BUILD_TYPE=Release -S . -B ./build -G
+cmake -DCMAKE_BUILD_TYPE=Release -S . -B ./build
 cmake --build ./build
 ```
