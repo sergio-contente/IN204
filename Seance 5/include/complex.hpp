@@ -4,7 +4,8 @@
 #include <iostream>
 #include <cmath>
 
-class Polar {};
+class Polar {
+};
 
 class Complex
 {
@@ -102,6 +103,12 @@ public:
 				+ aRightValue.mImaginaryPart * aRightValue.mImaginaryPart;
 		return *this * Complex(aRightValue.mRealPart / squareNorm, - aRightValue.mImaginaryPart / squareNorm);
 	}
+
+	template<class charT, class charTraits>
+	friend std::basic_ostream<charT>& operator <<(
+    std::basic_ostream<charT, charTraits>& aStream, 
+    const Complex& aValue);
+
 };
 
 	inline Complex operator * (int theLeftValue, const Complex& theRightValue)
@@ -136,6 +143,21 @@ inline Complex operator - (double aLeftValue, const Complex& aRightValue)
 			Complex leftValue(aLeftValue, 0.0);
 			return leftValue - aRightValue;
 	}
+
+template<class charT, class charTraits>
+std::basic_ostream<charT>& operator <<(
+    std::basic_ostream<charT, charTraits>& aStream, 
+    const Complex& aValue)
+{
+	
+    if(aValue.mRealPart != 0 &&
+        aValue.mImaginaryPart != 0)
+        aStream << aValue.mRealPart << "+" << aValue.mImaginaryPart << "i";
+    else if(aValue.mImaginaryPart != 0)
+        aStream << aValue.mImaginaryPart << "i";
+    else
+        aStream << aValue.mRealPart;
+}
 
 extern const Complex I;
 
