@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
 	BiDiCounter	bidi(10);
 
 	forward.testNext(forward);
-	forward.testNext(verboseforward);
+	verboseforward.testNext(verboseforward);
 	backward.testNext(backward);
 	bidi.testNext(bidi);
 
